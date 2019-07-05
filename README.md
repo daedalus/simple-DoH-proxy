@@ -1,5 +1,5 @@
 # simple-DoH-proxy
-A simple DNS over HTTPS proxy
+A simple DNS over HTTPS proxy https://datatracker.ietf.org/doc/rfc8484/
 
 ```
   git clone https://github.com/daedalus/simple-DoH-proxy
