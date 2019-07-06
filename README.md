@@ -9,6 +9,6 @@ A simple DNS over HTTPS proxy https://datatracker.ietf.org/doc/rfc8484/
 On a separate screen:
 ```
 nslookup
-> 127.0.0.1
+> server 127.0.0.1
 > example.com
 ```
