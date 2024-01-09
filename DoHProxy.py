@@ -19,8 +19,7 @@ gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
 
 def sslget(url):
     req = urllib2.Request(url)
-    data = urllib2.urlopen(req, context=gcontext).read()
-    return data
+    return urllib2.urlopen(req, context=gcontext).read()
 
 urlbase = "https://%s/dns-query?dns=" % hostname 
 
