@@ -21,21 +21,21 @@ def sslget(url):
     req = urllib.request.Request(url)
     return urllib.request.urlopen(req, context=gcontext).read()
 
-urlbase = "https://%s/dns-query?dns=" % hostname 
+urlbase = f"https://{hostname}/dns-query?dns=" 
 
 ###print ssock
 print("Proxy running...")
 
 def DNS_dissect(data,addr):
-	ID = data[0:2].encode('hex')
-	QR = data[2:4].encode('hex')
-	QD = data[4:6].encode('hex')
-	AN = data[6:8].encode('hex')
-	NS = data[8:10].encode('hex')
-	AR = data[10:12].encode('hex')
-	payload = data[12:].encode('hex')
-	print("ADDR,ID,QR,QD,AN,NS,AR,payload")
-	print(addr,ID,QR,QD,AN,NS,AR,payload)
+    ID = data[:2].encode('hex')
+    QR = data[2:4].encode('hex')
+    QD = data[4:6].encode('hex')
+    AN = data[6:8].encode('hex')
+    NS = data[8:10].encode('hex')
+    AR = data[10:12].encode('hex')
+    payload = data[12:].encode('hex')
+    print("ADDR,ID,QR,QD,AN,NS,AR,payload")
+    print(addr,ID,QR,QD,AN,NS,AR,payload)
 
 while True:    
 	data1, addr1 = sock.recvfrom(2048) # buffer size is 1024 bytes
